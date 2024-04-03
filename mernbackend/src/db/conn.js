@@ -1,5 +1,6 @@
 const mongoose =require("mongoose");
-mongoose.connect("mongodb://127.0.0.1:27017/misRegistration",{
+mongoose.connect("mongodb+srv://raldcruz2004:4mH6GiiaCE12OBQM@cluster0.6048vph.mongodb.net/",
+{
     useNewUrlParser:true,
     useUnifiedTopology:true
 

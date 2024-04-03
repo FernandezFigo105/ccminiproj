@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="../public/css/style.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    {{>header}}
+
+</head>
+
+   
+
+<body style="background-image: url('/Aec-Library-Website-main/assets/images/Background.png'); background-color: rgba(236, 236, 236, 0.842); background-size: cover;
+background-repeat: no-repeat;">
+{{>navbar}}
+  <div id="topBtn" title="Go to Top">
+    <a href="#"><span class="fa fa-angle-up"></span></a>
+  </div>
+
+  <!-- pre-loader -->
+  <div id="loading"></div>
+  
+  <nav class="navbar navbar-expand-lg navbar-light bg-info">
+    <!-- <a class="navbar-brand ml-4" href="#"><img src="assets/logos/Logo Aec.png" alt="AEC Library" class="logo-img"></a> -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#"
+            >Home <span class="sr-only">(current)</span></a
+          >
+        </li>
+        <li class="nav-item"><a href="./public/donate-book.html" class="nav-link">Donate Books</a></li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input
+          class="form-control mr-sm-2"
+          id="searchTxt"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button class="btn btn-dark my-2 my-sm-0" type="submit">
+          Search
+        </button>
+      </form>
+    </div>
+  </nav>
+
+  <div id="message"></div>
+
+  <div class="container my-3">
+    <h1>LIBRARY </h1>
+    <h5 align="center">
+      <a href="" style="color:black;" class="typewrite" data-period="2000" data-type='[ "“If you don’t like to read, you haven’t found the right book.” – J.K. Rowling", "“That’s the thing about books. They let you travel without moving your feet.” – Jhumpa Lahiri", "“There is more treasure in books than in all the pirate’s loot on Treasure Island.” – Walt Disney", "“Some of these things are true and some of them lies. But they are all good stories.” – Hilary Mantel" ]'>
+        <span class="wrap"></span>
+      </a>
+    </h5>
+    <hr />
+    <form id="libraryForm">
+      <div class="form-group row">
+        <label for="bookName" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="input-box"
+            id="bookName"
+            placeholder="Book Name"
+          />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="Author" class="col-sm-2 col-form-label">Author</label>
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="input-box"
+            id="author"
+            placeholder="Author"
+          />
+        </div>
+      </div>
+      <fieldset class="form-group">
+        <div class="row">
+          <legend class="col-form-label col-sm-2 pt-0">Category</legend>
+
+          <div class="col-sm-10">
+             
+              <div class="form-check">
+
+                <select class="form-check-input" name="type" id="type">
+
+                  
+                  <option value="N/A">Select Category</option>
+                  <option value="Arts & Music">Arts & Music</option>
+                  <option value="Biographies">Biographies</option>
+                  <option value="Business">Business</option>
+                  <option value="Comics">Comics</option>
+                  <option value="Computer & Tech">Computers & Tech</option>
+                  <option value="Cooking">Cooking</option>
+                  <option value="Education & Reference">Education & Reference</option>
+                  <option value="Entertainment">Entertainment</option>
+                  <option value="Health & Fitness">Health & Fitness</option>
+                  <option value="History">History</option>
+                  <option value="Hobbies & Crafts">Hobbies & Crafts</option>
+                  <option value="Home & Garden">Home & Garden</option>
+                  <option value="Horror">Horror</option>
+                  <option value="Kids">Kids</option>
+                  <option value="Literature & Fiction">Literature & Fiction</option>
+                  <option value="Medical">Medical</option>
+                  <option value="Mystery">Mystery</option>
+                  <option value="Parenting">Parenting</option>
+                  <option value="Religion">Religion</option>
+                  <option value="Romance">Romance</option>
+                  <option value="Sci-Fi & Fantasy">Sci-Fi & Fantasy</option>
+                  <option value="Science & Maths">Science & Maths</option>
+                  <option value="Self-Help">Self-Help</option>
+                  <option value="Social Sciences">Social Sciences</option>
+                  <option value="Sports">Sports</option>
+                  <option value="Travel">Travel</option>
+                  <option value="True Crime">True Crime</option>
+                 
+              
+                </select>
+              </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="form-group row">
+        <div class="col-sm-10">
+          <button type="submit" class="btn btn-primary">Add Book</button>
+        </div>
+      </div>
+    </form>
+
+    <div id="table">
+      <h1>Your books</h1>
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Author</th>
+
+            <th scope="col">Type</th>
+            <th scope="col">Category</th>
+
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+  </div>
+ <div >
+  
+    
+ </div>
+</div>
+  <!-- <footer>
+    <div class="footer-main">
+      <div class="text-center text-lg-start">
+        <div>© 2020 Copyright:</div>
+      </div>
+    </div>
+  </footer> -->
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="./assets/js/script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <!-- Go to Top  -->
+  <script>
+    $(document).ready(function(){
+      $(window).scroll(function(){
+        if($(window).scrollTop() > 40){
+          $('#topBtn').css({
+            "opacity":"1", "pointer-events":"auto"
+          });
+        } else{
+          $('#topBtn').css({
+            "opacity":"0", "pointer-events":"none"
+          });
+        }
+      });
+
+      $("#topBtn").click(function(){
+        $('html ,body').animate({scrollTop : 0},400);
+      });
+    });
+  </script>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    // Constructor
+function Book(name, author, type) {
+  this.name = name;
+  this.author = author;
+  this.type = type;
+}
+
+// typrwiter text
+var TxtType = function(el, toRotate, period) {
+  this.toRotate = toRotate;
+  this.el = el;
+  this.loopNum = 0;
+  this.period = parseInt(period, 10) || 2000;
+  this.txt = '';
+  this.tick();
+  this.isDeleting = false;
+};
+
+TxtType.prototype.tick = function() {
+  var i = this.loopNum % this.toRotate.length;
+  var fullTxt = this.toRotate[i];
+
+  if (this.isDeleting) {
+  this.txt = fullTxt.substring(0, this.txt.length - 1);
+  } else {
+  this.txt = fullTxt.substring(0, this.txt.length + 1);
+  }
+
+  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+  var that = this;
+  var delta = 200 - Math.random() * 100;
+
+  if (this.isDeleting) { delta /= 2; }
+
+  if (!this.isDeleting && this.txt === fullTxt) {
+  delta = this.period;
+  this.isDeleting = true;
+  } else if (this.isDeleting && this.txt === '') {
+  this.isDeleting = false;
+  this.loopNum++;
+  delta = 500;
+  }
+
+  setTimeout(function() {
+  that.tick();
+  }, delta);
+};
+
+window.onload = function() {
+  var elements = document.getElementsByClassName('typewrite');
+  for (var i=0; i<elements.length; i++) {
+      var toRotate = elements[i].getAttribute('data-type');
+      var period = elements[i].getAttribute('data-period');
+      if (toRotate) {
+        new TxtType(elements[i], JSON.parse(toRotate), period);
+      }
+  }
+  // INJECT CSS
+  var css = document.createElement("style");
+  css.type = "text/css";
+  css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+  document.body.appendChild(css);
+};
+
+
+// Display Constructor
+function Display() {}
+
+// Add methods to display prototype
+let countBooks = 0;
+Display.prototype.add = function (book) {
+  console.log("Adding to UI");
+  tableBody = document.getElementById("tableBody");
+  countBooks = countBooks + 1;
+  let uiString = `<tr id="${countBooks}">
+                        <td>${book.name}</td>
+                        <td>${book.author}</td>
+                        <td>${book.type}</td>
+                        <td><button class="btn btn-success" id="edit" onclick="editfunction('${book.name}','${book.author}','${book.type}','${countBooks}')">Edit</button>
+                        </td?
+                        <td><button class="btn btn-danger" id="edit" onclick="deletefunction('${countBooks}')">Delete</button>
+                        </td>
+                    </tr>`;
+  tableBody.innerHTML += uiString;
+};
+
+// Implement the clear function
+Display.prototype.clear = function () {
+  let libraryForm = document.getElementById("libraryForm");
+  libraryForm.reset();
+};
+
+// Implement the validate function
+Display.prototype.validate = function (book) {
+  if (book.name.length < 2 || book.author.length < 2) {
+    return false;
+  } else {
+    return true;
+  }
+};
+Display.prototype.show = function (type, displayMessage) {
+  let message = document.getElementById("message");
+  message.innerHTML = `<div class="alert alert-${type} alert-dismissible fade show" role="alert">
+                            <strong>Messge:</strong> ${displayMessage}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                            </button>
+                        </div>`;
+  setTimeout(function () {
+    message.innerHTML = "";
+  }, 2000);
+};
+
+// Add submit event listener to libraryForm
+let libraryForm = document.getElementById("libraryForm");
+libraryForm.addEventListener("submit", libraryFormSubmit);
+
+function libraryFormSubmit(e) {
+  console.log("YOu have submitted library form");
+  let name = document.getElementById("bookName").value;
+  let author = document.getElementById("author").value;
+  let type = document.getElementById("type").value;
+ 
+
+  let book = new Book(name, author, type);
+  console.log(book);
+
+  let display = new Display();
+
+  if (display.validate(book)) {
+    display.add(book);
+    display.clear();
+    display.show("success", "Your book has been successfully added");
+  } else {
+    // Show error to the user
+    display.show("danger", "Sorry you cannot add this book");
+  }
+
+  e.preventDefault();
+}
+
+//edit function
+function editfunction(pbookname, pauthorname, ptype, pbookid) {
+  document.getElementById("bookName").value = pbookname;
+  document.getElementById("author").value = pauthorname;
+  document.getElementById(ptype).checked = true;
+  document.getElementById(pbookid).style.display = "none";
+}
+
+//Delete function
+function deletefunction(pbookid) {
+  document.getElementById(pbookid).style.display = "none";
+}
+
+window.onload=function(){
+  document.getElementById('loading').style.display="none";
+  document.getElementById('body').style.display="block";
+}
+// Todos"
+// 1. Store all the data to the localStorage
+// 2. Give another column as an option to delete the book
+// 3. Add a scroll bar to the view.
+
+  </script>
+</body>
+</html>

@@ -26,6 +26,11 @@ app.get("/register",(req,res)=>{
     res.render("register");
 })
 
+app.get("/issue",(req,res)=>{
+   
+  res.render("issue");
+})
+
 app.post("/register",async (req,res)=>{
     console.log(req.body);
     try {
@@ -52,6 +57,31 @@ app.post("/register",async (req,res)=>{
         res.status(400).send(error);
       }
     });
+
+    
+
+app.post("/issue", async (req, res) => {
+  console.log(req.body); // Log the request body for debugging
+
+  try {
+    // Create a new Book instance with data from the request body
+    const newBook = new Book({
+      name: req.body.name,
+      author: req.body.author,
+      category: req.body.category,
+    });
+
+    // Validate and save the Book instance (assuming validation is implemented)
+    const savedBook = await newBook.save();
+
+    // Respond with a success message and potentially the saved book data
+    res.status(201).json({ message: "Book issued successfully!", book: savedBook }); // Use JSON for API responses
+
+  } catch (error) {
+    console.error(error); // Log the error for debugging
+    res.status(400).json({ message: "Error issuing book", error: error.message }); // Send a more informative error response
+  }
+});
 app.listen(port, () => {
   console.log(`Server is running at port no ${port}`);
 });

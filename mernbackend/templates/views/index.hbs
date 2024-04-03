@@ -4,34 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="../public/css/style.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    {{>header}}
 </head>
 <body>
     {{>navbar}}
-    <section class="hero">
-  <div class="container text-center">
-    <h1>Welcome to My Website</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac risus nec justo euismod venenatis.</p>
-    <a href="#" class="btn btn-primary">Get Started</a>
-  </div>
-</section>
+    
+    <main class="  h-[90vh] bg-[#57aa9f]  border-black pt-[200px]">
+      <div class=" ml-[100px]  h-[150px] flex items-center w-auto mb-[px] font-bold text-[#f1debe] text-[50px] "> STEP INTO THE MAGICAL WORLD OF BOOKS!!
+      </div>
+      <div class=" flex justify-start ml-[100px] mt-[20px] pl-[40px]">
+        <button href="/register" class="w-[150px] h-[50px] bg-[#f4be3b] rounded-full text-[20px] ">
+          Register
+        </button>
+        
+      </div>
+      
+      <img src="mernbackend\public\assets\pattern.png" alt="Description of the image" class="w-64 h-64">
+      </div>
+      
+    </main>
 
-<!-- Main Content -->
-<section class="content">
-  <div class="container">
-    <h2>About Us</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac risus nec justo euismod venenatis.</p>
 
-    <h2>Our Services</h2>
-    <ul>
-      <li>Service 1</li>
-      <li>Service 2</li>
-      <li>Service 3</li>
-    </ul>
-
-    <h2>Contact Us</h2>
-    <p>Email: contact@example.com</p>
-    <p>Phone: +1 (123) 456-7890</p>
-  </div>
-</section>
+  
 </body>
 </html>
